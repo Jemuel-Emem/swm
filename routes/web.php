@@ -65,7 +65,12 @@ Route::middleware([
             Route::get('/dashboard', function(){
                    return view('spadmin.index');
                })->name('sp-admindashboard');
-
+            Route::get('/barangay', function(){
+                   return view('spadmin.barangay');
+               })->name('sp-adminbarangay');
+            Route::get('/users', function(){
+                   return view('spadmin.users');
+               })->name('sp-users');
             });
 
 

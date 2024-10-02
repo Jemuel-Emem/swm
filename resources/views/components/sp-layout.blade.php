@@ -55,12 +55,19 @@
             </div>
 
             <!-- Navigation Links -->
-            <ul class="space-y-6 mt-8">
+            <ul class="space-y-2 mt-8">
                 <li>
                     <a href=""
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-home-4-line"></i>
                         <span class="ml-3">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('sp-adminbarangay') }}"
+                        class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
+                        <i class="ri-building-3-line"></i>
+                        <span class="ml-3">Barangays</span>
                     </a>
                 </li>
                 <li>
@@ -77,13 +84,21 @@
                         <span class="ml-3">Reports</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('sp-users') }}"
+                        class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
+                        <i class="ri-user-line"></i>
+                        <span class="ml-3">Users</span>
+                    </a>
+                </li>
             </ul>
 
             <!-- Logout button positioned at the bottom -->
             <div class="sidebar-footer mt-auto">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="block w-full py-2 px-3 text-white font-bold bg-green-700 rounded-lg hover-logout">
+                    <button type="submit"
+                        class="block w-full py-2 px-3 text-white font-bold bg-green-700 rounded-lg hover-logout">
                         <i class="ri-logout-box-r-line"></i>
                         <span class="ml-3">Logout</span>
                     </button>

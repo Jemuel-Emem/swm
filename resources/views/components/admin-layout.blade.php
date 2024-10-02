@@ -83,7 +83,8 @@
             <div class="sidebar-footer mt-auto">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="block w-full py-2 px-3 text-white font-bold bg-green-700 rounded-lg hover-logout">
+                    <button type="submit"
+                        class="block w-full py-2 px-3 text-white font-bold bg-green-700 rounded-lg hover-logout">
                         <i class="ri-logout-box-r-line"></i>
                         <span class="ml-3">Logout</span>
                     </button>
