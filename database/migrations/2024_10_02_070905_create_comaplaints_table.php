@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('barangay');
+            $table->foreignId('barangay_id');
             $table->string('violation');
             $table->date('violation_date');
             $table->time('violation_time');

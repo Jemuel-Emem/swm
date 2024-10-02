@@ -49,7 +49,13 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Salinas', 'email' => 'salinas@gmail.com'],
             ['name' => 'Talao-Talao', 'email' => 'talao.talao@gmail.com']
         ];
-        
+
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('password'),
+            'role' => 1
+        ]);
         
         foreach ($barangayEmails as $key => $value) {
            $user = User::create([

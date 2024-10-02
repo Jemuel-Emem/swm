@@ -12,7 +12,7 @@ class comaplaints extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'barangay',
+        'barangay_id',
         'violation',
         'violation_date',
         'violation_time',

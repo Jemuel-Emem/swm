@@ -2,6 +2,7 @@
 
 namespace App\Livewire\User;
 
+use App\Models\Barangay;
 use App\Models\Comaplaints;
 use Livewire\Component;
 use WireUi\Traits\Actions;
@@ -19,7 +20,7 @@ class ComplainForm extends Component
         'violation' => 'required|string',
         'violation_date' => 'required|date',
         'violation_time' => 'required',
-        'proof' => 'required|image|mimes:jpg,jpeg,png|max:1024',
+        'proof' => 'required|image|mimes:jpg,jpeg,png|max:2050',
     ];
 
     public function submitComplaint()
@@ -34,7 +35,7 @@ class ComplainForm extends Component
         Comaplaints::create([
             'user_id' => auth()->id(),
             'name' => auth()->user()->name,
-            'barangay' => $this->barangay,
+            'barangay_id' => $this->barangay,
             'violation' => $this->violation,
             'violation_date' => $this->violation_date,
             'violation_time' => $this->violation_time,
@@ -52,6 +53,8 @@ class ComplainForm extends Component
 
     public function render()
     {
-        return view('livewire.user.complain-form');
+        return view('livewire.user.complain-form',[
+            'barangays' => Barangay::get(),
+        ]);
     }
 }
