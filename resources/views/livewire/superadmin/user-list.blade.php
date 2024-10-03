@@ -23,7 +23,7 @@
                                 <tr class="text-neutral-600 bg-neutral-50">
                                     <td class="px-5 py-4 text-sm uppercase font-medium whitespace-nowrap">
                                         {{ $item->name }}</td>
-                                    <td class="px-5 py-4 text-sm uppercase font-medium whitespace-nowrap">
+                                    <td class="px-5 py-4 text-sm  font-medium whitespace-nowrap">
                                         {{ $item->email }}</td>
 
                                     <td class="px-5 py-4 text-sm font-medium text-right whitespace-nowrap">

@@ -5,7 +5,6 @@ namespace App\Livewire\User;
 use App\Models\Barangay;
 use App\Models\Comaplaints;
 use Livewire\Component;
-use App\Models\Barangay;
 use WireUi\Traits\Actions;
 use Livewire\WithFileUploads;
 

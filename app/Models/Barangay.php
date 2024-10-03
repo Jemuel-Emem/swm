@@ -11,5 +11,12 @@ class Barangay extends Model
 
     protected $guarded = [];
 
+    public function complaints(){
+        return $this->hasMany(comaplaints::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     
 }

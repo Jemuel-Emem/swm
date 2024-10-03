@@ -17,5 +17,10 @@ class comaplaints extends Model
         'violation_date',
         'violation_time',
         'proof_image',
+        'status',
     ];
+
+    public function barangay(){
+        return $this->belongsTo(Barangay::class);
+    }
 }

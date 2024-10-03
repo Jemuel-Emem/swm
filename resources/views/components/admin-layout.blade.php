@@ -57,7 +57,7 @@
             <!-- Navigation Links -->
             <ul class="space-y-6 mt-8">
                 <li>
-                    <a href=""
+                    <a href="{{ route('Admindashboard') }}"
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-home-4-line"></i>
                         <span class="ml-3">Home</span>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('violation_date');
             $table->time('violation_time');
             $table->string('proof_image')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

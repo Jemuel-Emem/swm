@@ -62,6 +62,9 @@ Route::middleware([
            Route::get('/Form', function(){
             return view('user.complain-form');
         })->name('complaints');
+           Route::get('/complaint-status', function(){
+            return view('user.complain-status');
+        })->name('complain-status');
 
         });
 
