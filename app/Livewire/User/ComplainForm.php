@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\Comaplaints;
 use Livewire\Component;
+use App\Models\Barangay;
 use WireUi\Traits\Actions;
 use Livewire\WithFileUploads;
 
@@ -38,7 +39,7 @@ class ComplainForm extends Component
             'violation' => $this->violation,
             'violation_date' => $this->violation_date,
             'violation_time' => $this->violation_time,
-            'proof' => $proofPath,
+            'proof_image' => $proofPath,
         ]);
 
         $this->notification()->success(

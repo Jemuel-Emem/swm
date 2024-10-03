@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>MINDBREAKER - Solid Waste Management</title>
+    <title>Solid Waste Management</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -23,12 +23,12 @@
             background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(45, 253, 151, 1) 100%);
         }
 
-        /* Logout button at the bottom of sidebar */
+
         .sidebar-footer {
             margin-top: auto;
         }
 
-        /* Hover effect for logout button */
+
         .hover-logout:hover {
             background-color: #28a745;
             color: white;
@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href=""
+                    <a href="{{ route('comp') }}"
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-file-list-3-line"></i>
                         <span class="ml-3">Complaints</span>
@@ -79,7 +79,7 @@
                 </li>
             </ul>
 
-            <!-- Logout button positioned at the bottom -->
+
             <div class="sidebar-footer mt-auto">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

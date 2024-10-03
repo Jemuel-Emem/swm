@@ -48,6 +48,10 @@ Route::middleware([
             return view('admin.index');
         })->name('Admindashboard');
 
+        Route::get('/Complaints', function(){
+            return view('admin.complaints');
+        })->name('comp');
+
      });
 
      Route::prefix('user')->middleware('user')->group(function(){
