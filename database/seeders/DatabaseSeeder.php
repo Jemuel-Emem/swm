@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 1
         ]);
-        
+
         foreach ($barangayEmails as $key => $value) {
            $user = User::create([
             'name' => $value['name'],
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
            Barangay::create([
             'user_id' => $user->id,
             'name' => $value['name']
-            
+
            ]);
         }
     }

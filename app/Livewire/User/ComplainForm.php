@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\Barangay;
 use App\Models\Comaplaints;
+use App\Models\violation;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 use Livewire\WithFileUploads;
@@ -53,8 +54,10 @@ class ComplainForm extends Component
 
     public function render()
     {
-        return view('livewire.user.complain-form',[
+        return view('livewire.user.complain-form', [
             'barangays' => Barangay::get(),
+            'violations' => Violation::get(),
         ]);
     }
+
 }

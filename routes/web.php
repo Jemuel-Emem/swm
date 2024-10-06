@@ -78,6 +78,10 @@ Route::middleware([
             Route::get('/users', function(){
                    return view('spadmin.users');
                })->name('sp-users');
+
+               Route::get('/violation', function(){
+                return view('spadmin.violation');
+            })->name('sp-violation');
             });
 
 

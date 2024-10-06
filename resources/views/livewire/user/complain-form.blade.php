@@ -23,11 +23,11 @@
             <label for="violation" class="block mb-2 text-sm font-medium text-gray-700">Type of Violation</label>
             <select wire:model="violation" id="violation" name="violation"
                 class="block w-full p-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-900">
-                <option value="" disabled selected>Select Violation Type</option>
-                <option>Littering</option>
-                <option>Illegal Dumping</option>
-                <option>Burning of Waste</option>
-                <option>Improper Segregation</option>
+                <option value=""  selected>Select Violation Type</option>
+
+                @foreach ($violations as $item)
+                    <option value="{{ $item->name }}">{{ $item->name }}</option>
+                @endforeach
             </select>
             @error('violation')
                 <span class="text-red-500">{{ $message }}</span>

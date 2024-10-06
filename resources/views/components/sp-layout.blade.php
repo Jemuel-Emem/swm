@@ -70,6 +70,14 @@
                         <span class="ml-3">Barangays</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('sp-violation') }}"
+                        class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
+                        <i class="ri-building-3-line"></i>
+                        <span class="ml-3">Violation</span>
+                    </a>
+                </li>
                 <li>
                     <a href=""
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
