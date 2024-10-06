@@ -13,6 +13,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <style>
         [x-cloak] {
@@ -46,7 +48,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar-multi-level-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-green-600 flex flex-col">
+        class="fixed top-0 left-0 z-30 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-green-600 flex flex-col">
         <div class="h-full px-3 py-4 overflow-y-auto flex flex-col">
             <!-- Logo and Title -->
             <div class="flex flex-col items-center">
@@ -71,7 +73,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href=""
+                    <a href="{{ route('adminReports') }}"
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-bar-chart-box-line"></i>
                         <span class="ml-3">Reports</span>
@@ -95,7 +97,7 @@
 
     <!-- Main Content -->
     <div class="p-6 sm:ml-64">
-        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+        <div class="p-6 relative z-50 bg-white border border-gray-200 rounded-lg shadow-sm">
             <main>
                 {{ $slot }}
             </main>

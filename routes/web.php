@@ -51,6 +51,9 @@ Route::middleware([
         Route::get('/Complaints', function(){
             return view('admin.complaints');
         })->name('comp');
+        Route::get('/reports', function(){
+            return view('admin.reports');
+        })->name('adminReports');
 
      });
 
@@ -82,6 +85,9 @@ Route::middleware([
                Route::get('/violation', function(){
                 return view('spadmin.violation');
             })->name('sp-violation');
+               Route::get('/reports', function(){
+                return view('spadmin.reports');
+            })->name('sp-reports');
             });
 
 

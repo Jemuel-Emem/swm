@@ -13,6 +13,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <style>
         [x-cloak] {
@@ -57,7 +59,7 @@
             <!-- Navigation Links -->
             <ul class="space-y-2 mt-8">
                 <li>
-                    <a href=""
+                    <a href="{{ route('sp-admindashboard') }}"
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-home-4-line"></i>
                         <span class="ml-3">Home</span>
@@ -78,15 +80,9 @@
                         <span class="ml-3">Violation</span>
                     </a>
                 </li>
+
                 <li>
-                    <a href=""
-                        class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
-                        <i class="ri-file-list-3-line"></i>
-                        <span class="ml-3">Complaints</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=""
+                    <a href="{{ route('sp-reports') }}"
                         class="flex items-center p-2 text-white hover:bg-white hover:text-green-600 rounded-lg">
                         <i class="ri-bar-chart-box-line"></i>
                         <span class="ml-3">Reports</span>

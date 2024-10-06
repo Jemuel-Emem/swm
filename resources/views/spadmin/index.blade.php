@@ -1,6 +1,5 @@
 <x-sp-layout>
     <div>
-
-  asa
+        <livewire:map />
     </div>
 </x-sp-layout>
