@@ -16,6 +16,9 @@ class ComplainForm extends Component
 
     public $barangay, $violation, $violation_date, $violation_time, $proof;
 
+    public $barangayss;
+    public $coordinates = [13.9312, 121.6173];
+
     protected $rules = [
         'barangay' => 'required|string',
         'violation' => 'required|string',
@@ -23,6 +26,12 @@ class ComplainForm extends Component
         'violation_time' => 'required',
         'proof' => 'required|image|mimes:jpg,jpeg,png|max:2050',
     ];
+
+    public function mount()
+    {
+        // Fetch barangay data with names and coordinates
+        $this->barangays = Barangay::select('name', 'latitude', 'longitude')->get();
+    }
 
     public function submitComplaint()
     {
@@ -51,6 +60,8 @@ class ComplainForm extends Component
 
         $this->reset(['barangay', 'violation', 'violation_date', 'violation_time', 'proof']);
     }
+
+    
 
     public function render()
     {
