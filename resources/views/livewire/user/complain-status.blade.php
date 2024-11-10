@@ -2,7 +2,7 @@
     <div class="p-5 ">
         <h1 class="text-2xl font-bold text-gray-700 uppercase">Complain Status</h1>
         <div class="mt-10 grid grid-cols-2 gap-5">
-            @foreach ($complaints as $item)
+            @forelse ($complaints as $item)
                 <article
                     class="group grid rounded-md max-w-2xl grid-cols-1 md:grid-cols-8 overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
                     <!-- image -->
@@ -41,7 +41,11 @@
                         </div>
                     </div>
                 </article>
-            @endforeach
+                @empty
+                    <div class=" p-5 text-center">
+                        No complaints found.
+                    </div>
+                @endforelse
+            </div>
         </div>
     </div>
-</div>

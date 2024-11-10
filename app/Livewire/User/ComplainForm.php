@@ -16,7 +16,7 @@ class ComplainForm extends Component
 
     public $barangay, $violation, $violation_date, $violation_time, $proof;
 
-    public $barangayss;
+    public $barangays;
     public $coordinates = [13.9312, 121.6173];
 
     protected $rules = [
@@ -30,7 +30,7 @@ class ComplainForm extends Component
     public function mount()
     {
         // Fetch barangay data with names and coordinates
-        $this->barangays = Barangay::select('name', 'latitude', 'longitude')->get();
+        $this->barangays = Barangay::withCount('complaints')->get();
     }
 
     public function submitComplaint()
@@ -45,7 +45,7 @@ class ComplainForm extends Component
         Comaplaints::create([
             'user_id' => auth()->id(),
             'name' => auth()->user()->name,
-            'barangay_id' => $this->barangay,
+            'barangay_id' => Barangay::where('name', 'like', '%'. $this->barangay. '%')->first()->id,
             'violation' => $this->violation,
             'violation_date' => $this->violation_date,
             'violation_time' => $this->violation_time,
@@ -59,6 +59,7 @@ class ComplainForm extends Component
 
 
         $this->reset(['barangay', 'violation', 'violation_date', 'violation_time', 'proof']);
+        return redirect()->route('complaints');
     }
 
     
@@ -66,7 +67,6 @@ class ComplainForm extends Component
     public function render()
     {
         return view('livewire.user.complain-form', [
-            'barangays' => Barangay::get(),
             'violations' => Violation::get(),
         ]);
     }
